@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>FlowNeo — Guide</title>
+<style>
+  @font-face{font-family:"Vazirmatn";src:local("Vazirmatn"),local("Vazir"),url("https://fonts.gstatic.com/s/vazirmatn/v13/Dxxo8j6PP2D_kU2muijlGMWWIGroe7ll.woff2") format("woff2");font-style:normal;font-weight:100 900;font-display:swap}
+  :root{--page:#07101f;--card:#0d1a2d;--line:rgba(73,124,177,.32);--brand:#58c0ff;--ink:#f3f8ff;--muted:#a9bdd2;--font:"Vazirmatn","Vazir","Segoe UI",Arial,sans-serif}
+  *{box-sizing:border-box}body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 50% 0,rgba(40,169,255,.18),transparent 42%),var(--page);color:var(--ink);font-family:var(--font)}
+  .card{max-width:520px;margin:24px;padding:34px 30px;background:rgba(13,26,45,.96);border:1px solid var(--line);border-radius:20px;box-shadow:0 28px 80px rgba(0,0,0,.25)}
+  .head{display:flex;align-items:center;gap:14px}.head img{width:52px;height:52px;padding:8px;border-radius:14px;background:rgba(40,169,255,.16)}
+  h1{margin:0;font-size:24px}.intro,.step p,.notice{font-size:13.5px;line-height:1.8;color:var(--muted)}.intro{margin:14px 0 20px}.step{display:flex;gap:12px;margin:15px 0}.step-n{flex-shrink:0;font-size:12px;font-weight:800;color:var(--brand)}
+  .notice{margin-top:22px;padding-top:18px;border-top:1px solid var(--line)}strong{color:var(--ink)}
+</style>
+</head>
+<body>
+<main class="card">
+  <div class="head"><img src="assets/flowneo-symbol.svg" alt="FlowNeo logo"><div><h1>FlowNeo Guide</h1><div class="intro">A compact control panel for the FlowNeo helper on Google Flow.</div></div></div>
+  <div class="step"><span class="step-n">01</span><p>Open the extension popup and turn on <strong>Enable helper</strong>.</p></div>
+  <div class="step"><span class="step-n">02</span><p>Open Google Flow, or reload an existing Flow tab after changing the helper state.</p></div>
+  <div class="step"><span class="step-n">03</span><p>Use the status area in the popup to see whether the helper is active, waiting for configuration, or needs a reload.</p></div>
+  <p class="notice">FlowNeo is not affiliated with Google. The extension communicates with <code>flow.cfcnode.com</code> for a remote configuration specification used by its existing helper engine. Review the source, permissions, and network destinations before installation.</p>
+  <p class="notice">Developer: <strong>RealJustAWall</strong></p>
+</main>
+</body>
+</html>
