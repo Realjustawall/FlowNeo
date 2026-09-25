@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; font-src 'self' data: https://fonts.gstatic.com;">
+<title>FlowNeo</title>
+<link rel="stylesheet" href="panel.css">
+</head>
+<body>
+<main class="shell">
+  <div class="aurora aurora-a" aria-hidden="true"></div>
+  <div class="aurora aurora-b" aria-hidden="true"></div>
+  <div class="noise" aria-hidden="true"></div>
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo-wrap"><img src="assets/flowneo-symbol.svg" class="brand-mark" alt="FlowNeo logo"></span>
+      <div class="brand-copy"><div class="brand-row"><strong>FlowNeo</strong><span class="version">v1.3.0</span></div><span>Google Flow helper</span></div>
+    </div>
+    <div class="secure-pill"><span class="secure-dot"></span>CONTROL PANEL</div>
+  </header>
+  <section class="hero"><span class="eyebrow">CONTROL CENTER</span><h1>Google Flow,<br><span>cleaner and easier.</span></h1><p>Enable or disable the FlowNeo helper, open Google Flow, and reload the active Flow tab from one compact panel.</p></section>
+  <section class="control-card">
+    <div class="card-shine" aria-hidden="true"></div>
+    <div class="control-main">
+      <div class="control-copy"><div class="icon-box" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18M5.5 6.8C7 5 9.3 4 12 4c4.4 0 8 3.6 8 8s-3.6 8-8 8-8-3.6-8-8c0-1.9.7-3.7 1.8-5.1"/></svg></div><div><span class="control-kicker">FLOW ACCESS</span><strong class="control-name">Enable helper</strong><span class="control-hint">Applies the helper to Google Flow tabs</span></div></div>
+      <button id="toggle" class="switch" role="switch" aria-checked="false" aria-label="Enable FlowNeo helper" disabled><span class="switch-glow"></span><span class="switch-thumb"></span></button>
+    </div>
+    <div id="status" class="status" role="status"><span class="status-orb"><span class="status-dot status-dot--idle"></span></span><div class="status-copy"><span class="status-label">Status</span><span class="status-text">Checking…</span></div></div>
+  </section>
+  <div class="actions">
+    <button id="open" class="btn btn-primary"><span>Open Google Flow</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+    <button id="reload" class="btn btn-secondary" hidden><span>Reload Flow tab</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.3 5.7M20 4v7h-7"/></svg></button>
+  </div>
+  <p id="error" class="error" role="alert"></p>
+  <div class="tip"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Zm0-13v4m0 4h.01"/></svg><span>After changing the helper state, reload any open Google Flow tab so the new setting can take effect.</span></div>
+  <footer class="foot"><div class="dev"><span class="dev-dot"></span><span>Developed by <b>RealJustAWall</b></span></div><span class="signature">FLOWNEO</span></footer>
+</main>
+<script src="panel.js"></script>
+</body>
+</html>
