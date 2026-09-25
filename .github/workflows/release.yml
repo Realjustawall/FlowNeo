@@ -9,7 +9,7 @@ permissions:
 
 jobs:
   release:
-    if: contains(github.event.head_commit.message, 'release: v1.3.1')
+    if: "${{ contains(github.event.head_commit.message, 'release: v1.3.1') }}"
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
