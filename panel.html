@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="color-scheme" content="dark">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; font-src 'self' data: https://fonts.gstatic.com;">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; font-src 'self' data:;">
 <title>FlowNeo</title>
 <link rel="stylesheet" href="panel.css">
 </head>
@@ -18,7 +18,7 @@
     <div class="brand">
       <span class="logo-wrap"><img src="assets/flowneo-symbol.svg" class="brand-mark" alt="FlowNeo logo"></span>
       <div class="brand-copy">
-        <div class="brand-row"><strong>FlowNeo</strong><span class="version">v1.3.1</span></div>
+        <div class="brand-row"><strong>FlowNeo</strong><span class="version">v1.4.0</span></div>
         <span>Google Flow helper</span>
       </div>
     </div>
@@ -27,8 +27,8 @@
 
   <section class="hero">
     <span class="eyebrow">CONTROL CENTER</span>
-    <h1>Google Flow,<br><span>cleaner and easier.</span></h1>
-    <p>Enable or disable the FlowNeo helper, open Google Flow, and reload the active Flow tab from one compact panel.</p>
+    <h1>Google Flow,<br><span>local helper controls.</span></h1>
+    <p>Keep the helper setting across restarts, inspect local configuration diagnostics, and retry the active Flow tab.</p>
   </section>
 
   <section class="control-card">
@@ -39,9 +39,9 @@
           <svg viewBox="0 0 24 24"><path d="M12 3v18M5.5 6.8C7 5 9.3 4 12 4c4.4 0 8 3.6 8 8s-3.6 8-8 8-8-3.6-8-8c0-1.9.7-3.7 1.8-5.1"/></svg>
         </div>
         <div>
-          <span class="control-kicker">FLOW ACCESS</span>
+          <span class="control-kicker">LOCAL CONFIGURATION</span>
           <strong class="control-name">Enable helper</strong>
-          <span class="control-hint">Applies the helper to Google Flow tabs</span>
+          <span class="control-hint">Runs locally on Google Flow tabs</span>
         </div>
       </div>
       <button id="toggle" class="switch" role="switch" aria-checked="false" aria-label="Enable FlowNeo helper" disabled>
@@ -71,10 +71,11 @@
   </div>
 
   <p id="error" class="error" role="alert"></p>
+  <p id="diagnostic" class="error" hidden></p>
 
   <div class="tip">
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Zm0-13v4m0 4h.01"/></svg>
-    <span>After changing the helper state, reload any open Google Flow tab so the new setting can take effect.</span>
+    <span>Reload open Flow tabs after changing the setting. Local configuration changes do not establish country eligibility or override server checks. <a href="info.html" target="_blank" rel="noopener">Guide / راهنما</a></span>
   </div>
 
   <footer class="foot">

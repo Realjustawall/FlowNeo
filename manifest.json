@@ -1,15 +1,15 @@
 {
   "manifest_version": 3,
   "name": "FlowNeo",
-  "version": "1.3.1",
+  "version": "1.4.0",
   "minimum_chrome_version": "111",
-  "description": "A modern control panel for enabling the FlowNeo helper on Google Flow and reloading active Flow tabs.",
+  "description": "Local Google Flow client configuration helper with persistent controls and bounded diagnostics.",
   "permissions": [
-    "scripting"
+    "scripting",
+    "storage"
   ],
   "host_permissions": [
-    "https://flow.google.com/*",
-    "https://flow.cfcnode.com/*"
+    "https://flow.google.com/*"
   ],
   "background": {
     "service_worker": "app.js"
@@ -31,15 +31,6 @@
     "128": "assets/icon-128.png"
   },
   "content_scripts": [
-    {
-      "matches": [
-        "https://flow.google.com/*"
-      ],
-      "js": [
-        "link.js"
-      ],
-      "run_at": "document_start"
-    },
     {
       "matches": [
         "https://flow.google.com/*"

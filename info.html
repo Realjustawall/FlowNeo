@@ -1,28 +1,31 @@
 <!doctype html>
-<html lang="en" dir="ltr">
+<html lang="fa" dir="rtl">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="color-scheme" content="dark">
-<title>FlowNeo — Guide</title>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; script-src 'none'; style-src 'self' 'unsafe-inline'; img-src 'self'; connect-src 'none'; font-src 'self';">
+<title>FlowNeo 1.4.0 — راهنما</title>
 <style>
-  @font-face{font-family:"Vazirmatn";src:local("Vazirmatn"),local("Vazir"),url("https://fonts.gstatic.com/s/vazirmatn/v13/Dxxo8j6PP2D_kU2muijlGMWWIGroe7ll.woff2") format("woff2");font-style:normal;font-weight:100 900;font-display:swap}
-  :root{--page:#07101f;--card:#0d1a2d;--line:rgba(73,124,177,.32);--brand:#58c0ff;--ink:#f3f8ff;--muted:#a9bdd2;--font:"Vazirmatn","Vazir","Segoe UI",Arial,sans-serif}
+  :root{--page:#07101f;--card:#0d1a2d;--line:rgba(73,124,177,.32);--brand:#58c0ff;--ink:#f3f8ff;--muted:#a9bdd2;--font:"Vazirmatn","Vazir",Tahoma,"Segoe UI",Arial,sans-serif}
   *{box-sizing:border-box}body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 50% 0,rgba(40,169,255,.18),transparent 42%),var(--page);color:var(--ink);font-family:var(--font)}
-  .card{max-width:520px;margin:24px;padding:34px 30px;background:rgba(13,26,45,.96);border:1px solid var(--line);border-radius:20px;box-shadow:0 28px 80px rgba(0,0,0,.25)}
+  .card{max-width:740px;margin:24px;padding:34px 30px;background:rgba(13,26,45,.96);border:1px solid var(--line);border-radius:20px;box-shadow:0 28px 80px rgba(0,0,0,.25)}
   .head{display:flex;align-items:center;gap:14px}.head img{width:52px;height:52px;padding:8px;border-radius:14px;background:rgba(40,169,255,.16)}
-  h1{margin:0;font-size:24px}.intro,.step p,.notice{font-size:13.5px;line-height:1.8;color:var(--muted)}.intro{margin:14px 0 20px}.step{display:flex;gap:12px;margin:15px 0}.step-n{flex-shrink:0;font-size:12px;font-weight:800;color:var(--brand)}
-  .notice{margin-top:22px;padding-top:18px;border-top:1px solid var(--line)}strong{color:var(--ink)}
+  h1{margin:0;font-size:24px}.intro,.step p,.notice{font-size:14px;line-height:1.95;color:var(--muted)}.intro{margin:14px 0 20px}.step{display:flex;gap:12px;margin:15px 0}.step-n{flex-shrink:0;font-size:12px;font-weight:800;color:var(--brand)}
+  .notice{margin-top:22px;padding-top:18px;border-top:1px solid var(--line)}strong{color:var(--ink)}code{direction:ltr;unicode-bidi:isolate}a{color:var(--brand)}
 </style>
 </head>
 <body>
 <main class="card">
-  <div class="head"><img src="assets/flowneo-symbol.svg" alt="FlowNeo logo"><div><h1>FlowNeo Guide</h1><div class="intro">A compact control panel for the FlowNeo helper on Google Flow.</div></div></div>
-  <div class="step"><span class="step-n">01</span><p>Open the extension popup and turn on <strong>Enable helper</strong>.</p></div>
-  <div class="step"><span class="step-n">02</span><p>Open Google Flow, or reload an existing Flow tab after changing the helper state.</p></div>
-  <div class="step"><span class="step-n">03</span><p>Use the status area in the popup to see whether the helper is active, waiting for configuration, or needs a reload.</p></div>
-  <p class="notice">FlowNeo is not affiliated with Google. The extension communicates with <code>flow.cfcnode.com</code> for a remote configuration specification used by its existing helper engine. Review the source, permissions, and network destinations before installation.</p>
-  <p class="notice">Developer: <strong>RealJustAWall</strong></p>
+  <div class="head"><img src="assets/flowneo-symbol.svg" alt="FlowNeo"><div><h1>راهنمای FlowNeo 1.4.0</h1><div class="intro">کنترل محلی پیکربندی Google Flow و وضعیت اجرای افزونه</div></div></div>
+  <div class="step"><span class="step-n">۰۱</span><p>در صفحهٔ <code>chrome://extensions</code> افزونه را از پوشهٔ نسخهٔ جدید بارگذاری یا Reload کنید. سپس در پنجرهٔ افزونه، <strong>Enable helper</strong> را روشن کنید.</p></div>
+  <div class="step"><span class="step-n">۰۲</span><p>تب Google Flow را یک بار تازه‌سازی کنید. اگر صفحهٔ <code>/unsupported-country</code> باز است، دکمهٔ <strong>Reload Flow tab</strong> همان تب را به صفحهٔ اصلی Flow برمی‌گرداند و بخش جست‌وجو و قطعهٔ نشانی را نگه می‌دارد.</p></div>
+  <div class="step"><span class="step-n">۰۳</span><p><strong>Armed</strong> یعنی hookهای محلی نصب شده‌اند و هنوز پاسخ شناخته‌شده‌ای دیده نشده است. <strong>Patched</strong> فقط یعنی فیلد پیکربندی سمت مرورگر تغییر کرده است؛ ورود موفق، مجاز بودن کشور یا امکان تولید را تأیید نمی‌کند. باقی ماندن صفحهٔ کشور نامعتبر همیشه در پنجرهٔ افزونه اولویت دارد.</p></div>
+  <div class="step"><span class="step-n">۰۴</span><p>اگر <strong>schema-mismatch</strong>، <strong>incompatible-response</strong> یا <strong>hook-error</strong> ادامه داشت، وضعیت و شمارنده‌های پنجرهٔ افزونه را بررسی کنید. نام حساب، محتوای درخواست، کوکی و توکن در این تشخیص نمایش داده نمی‌شود.</p></div>
+  <p class="notice"><strong>معماری نسخهٔ جدید:</strong> منطق تشخیص در <code>engine.js</code> داخل خود افزونه است. سرویس‌ورکر اجرای آن را در ابتدای بارگذاری صفحه و در محیط اصلی Flow ثبت می‌کند. نیازی به دریافت مشخصات از سرویس ثالث یا پل پیام از خود وب‌سایت نیست. مجوزها فقط <code>scripting</code>، <code>storage</code> و دسترسی به <code>https://flow.google.com/*</code> هستند.</p>
+  <p class="notice"><strong>ذخیره و مهاجرت تنظیم:</strong> انتخاب روشن/خاموش در ذخیره‌سازی محلی افزونه باقی می‌ماند و هنگام نصب، به‌روزرسانی، راه‌اندازی Chrome و بیدار شدن سرویس‌ورکر با ثبت اسکریپت هماهنگ می‌شود. نسخهٔ قدیم انتخاب را جداگانه ذخیره نمی‌کرد؛ اگر ثبت قدیمی موجود باشد، روشن در نظر گرفته می‌شود. نبودن ثبت می‌تواند نتیجهٔ خاموش بودن یا خرابی نصب باشد و قابل تشخیص نیست؛ در این حالت نسخهٔ جدید برای نصب و به‌روزرسانی به‌صورت پیش‌فرض روشن می‌شود. خاموش کردن از این نسخه به بعد پایدار است. تغییر تنظیم روی تب‌های از قبل باز فقط پس از تازه‌سازی اثر کامل دارد.</p>
+  <p class="notice">FlowNeo وابسته به Google نیست. تصمیم نهایی دسترسی و تولید با سرویس Google است. این نسخه وضعیت سمت مرورگر را توضیح می‌دهد و موفقیت دسترسی را صرفاً از روی تغییر یک پرچم محلی اعلام نمی‌کند.</p>
+  <p class="notice">رابط اصلی: <strong>RealJustAWall</strong> · بازنگری محلی: <strong>1.4.0</strong></p>
 </main>
 </body>
 </html>
