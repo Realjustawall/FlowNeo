@@ -1,121 +1,100 @@
-# FlowNeo
+<div align="center">
 
-FlowNeo is a Chrome extension that provides a compact, modern control panel for the existing helper used on **Google Flow**. It lets you enable or disable the helper, open Google Flow, reload the active Flow tab, and inspect the current helper state from the popup.
+![FlowNeo](docs/assets/banner-en.svg)
 
-> **Independent project:** FlowNeo is not affiliated with, endorsed by, or sponsored by Google.
+**A Chrome extension for persistent local Google Flow helper controls, bounded diagnostics and convenient tab actions.**
+
+<img alt="Version" src="https://img.shields.io/badge/version-v1.4-7c6dff?style=flat-square" />
+<img alt="Platform" src="https://img.shields.io/badge/platform-Chrome%20111%2B-354158?style=flat-square" />
+
+<a href="https://github.com/Realjustawall/FlowNeo/releases/latest"><img src="https://img.shields.io/badge/Download-7c6dff?style=flat-square&labelColor=161b22" alt="Download" /></a>
+<a href="docs/gallery.en.md"><img src="https://img.shields.io/badge/Demo%20gallery-5968c3?style=flat-square&labelColor=161b22" alt="Demo gallery" /></a>
+<a href="#quick-start"><img src="https://img.shields.io/badge/Quick%20start-354158?style=flat-square&labelColor=161b22" alt="Quick start" /></a>
+<a href="https://github.com/Realjustawall/FlowNeo/issues"><img src="https://img.shields.io/badge/Report%20an%20issue-354158?style=flat-square&labelColor=161b22" alt="Report an issue" /></a>
+
+[English](README.md) · [فارسی](README.fa.md)
+
+</div>
+
+---
+
+[Highlights](#features) · [Preview](#preview) · [Quick start](#quick-start) · [Development](#development) · [Documentation](#documentation) · [Security and privacy](#security) · [License and feedback](#license)
+
+<a id="features"></a>
 
 ## Highlights
 
-- Modern dark popup UI with the **Vazirmatn (Vazir)** typeface.
-- One-click helper enable/disable control.
-- Quick access to Google Flow.
-- Reload action for the active Flow tab.
-- Live status messages for active, armed, unavailable-spec, schema-mismatch, and reload-required states.
-- Manifest V3 extension architecture.
-- Branding and developer attribution set to **RealJustAWall**.
+| Capability | What you get |
+|---|---|
+| Persistent control | Save the helper setting locally and restore script registration when the worker wakes. |
+| Local diagnostics | Inspect recognized response state, observation counters and bounded error codes. |
+| Convenient actions | Open Google Flow and reload the active Flow tab from the popup. |
+| Scoped access | Manifest V3 with scripting/storage permissions and the Google Flow host only. |
 
-## How it works
+<a id="preview"></a>
 
-FlowNeo registers a content script for `https://flow.google.com/*`. When the helper is enabled, the extension runs its existing Flow integration code on Google Flow pages and can patch the relevant Flow configuration response used by the helper engine.
+## Preview
 
-The existing engine also requests a small remote configuration specification from:
+Original English popup rendered with a Chrome API test adapter; the enabled state is simulated. This is not evidence of Google Flow access.
 
-```text
-https://flow.cfcnode.com/v1/flow-spec
+![FlowNeo — Control panel](docs/assets/screenshots/en/control-panel-ui-harness.webp)
+
+[Open the full gallery](docs/gallery.en.md)
+
+<a id="quick-start"></a>
+
+## Quick start
+
+1. Download **FlowNeo-v1.4.0-FIXED.zip** from the latest release and extract it.
+2. Open `chrome://extensions`, enable **Developer mode** and choose **Load unpacked**.
+3. Select the folder containing `manifest.json` and pin FlowNeo.
+4. Open the popup, set **Enable helper**, then reload open Google Flow tabs.
+
+On updates, replace the extension files, reload the extension and refresh existing Flow tabs. Read the built-in [Persian guide](info.html) for detailed diagnostic states.
+
+<a id="development"></a>
+
+## Development
+
+No bundler or npm installation is required. Load this source directory as an unpacked extension.
+
+```bash
+git clone https://github.com/Realjustawall/FlowNeo.git
+cd FlowNeo
 ```
 
-That remote specification is used by the helper engine to locate the relevant configuration fields. Because part of the engine is obfuscated and the extension depends on an external endpoint, you should review the source, permissions, and network behavior before using it.
+Validation commands:
 
-## Permissions
-
-FlowNeo currently requests:
-
-```text
-scripting
+```bash
+node --check app.js
+node --check engine.js
+node --check stat.js
+node --check panel.js
 ```
 
-Host access is limited to:
+<a id="documentation"></a>
 
-```text
-https://flow.google.com/*
-https://flow.cfcnode.com/*
-```
+## Documentation
 
-The manifest does not request direct access to browser history, cookies, saved passwords, or all websites.
+- [Built-in Persian guide](info.html)
+- [Declared permissions](manifest.json)
+- [Local helper engine](engine.js)
+- [Preserved documentation reference](REFERENCE.md)
 
-## Installation
+<a id="security"></a>
 
-### Install from the release ZIP
+## Security and privacy
 
-1. Download `FlowNeo-v1.3.0.zip` from the latest GitHub Release.
-2. Extract the ZIP to a permanent folder.
-3. Open Chrome and go to:
+FlowNeo is independent of Google. Changing local client configuration does not establish country eligibility or bypass Google’s server-side checks. Version 1.4.0 performs diagnostics locally; the current manifest grants `scripting`, `storage` and access to `https://flow.google.com/*`. No third-party specification host is declared in the current manifest.
 
-   ```text
-   chrome://extensions
-   ```
+<a id="license"></a>
 
-4. Enable **Developer mode** in the top-right corner.
-5. Click **Load unpacked**.
-6. Select the extracted FlowNeo folder.
-7. Pin FlowNeo from the Chrome extensions menu if you want quick access.
+## License and feedback
 
-### Update an existing unpacked installation
+No repository-level license file is currently provided. Contact the maintainer before redistribution or reuse.
 
-1. Replace the old FlowNeo files with the files from the new release.
-2. Open `chrome://extensions`.
-3. Find FlowNeo and click the **Reload** button.
-4. Reload any open Google Flow tabs.
+[Report bugs or discuss improvements](https://github.com/Realjustawall/FlowNeo/issues). Include your version, OS and reproducible steps; keep credentials and private data out of reports.
 
-## Usage
+---
 
-1. Click the FlowNeo extension icon.
-2. Turn on **Enable helper**.
-3. Open Google Flow using the popup button, or switch to an existing Flow tab.
-4. Reload the Flow tab after changing the helper state.
-5. Check the popup status message if the helper is waiting for its spec, requires a reload, or reports a schema mismatch.
-
-## Project structure
-
-```text
-FlowNeo/
-├── manifest.json
-├── app.js
-├── engine.js
-├── link.js
-├── stat.js
-├── panel.html
-├── panel.css
-├── panel.js
-├── info.html
-├── assets/
-│   ├── flowneo-symbol.svg
-│   ├── icon-16.png
-│   ├── icon-32.png
-│   ├── icon-48.png
-│   └── icon-128.png
-├── README.md
-└── RELEASE_NOTES.md
-```
-
-## Security notes
-
-- `engine.js` is obfuscated, which makes independent review harder.
-- The helper depends on the external `flow.cfcnode.com` specification endpoint.
-- The extension is intentionally limited to the declared Flow-related hosts in the manifest.
-- No security audit or guarantee is implied by this repository.
-- Install unpacked extensions only when you understand and trust the code and its network dependencies.
-
-## Typography
-
-The UI uses **Vazirmatn**, the modern continuation of the Vazir font family. The CSS prefers a locally installed `Vazirmatn`/`Vazir` font and falls back to the Vazirmatn webfont when needed.
-
-## Developer
-
-**RealJustAWall**
-
-GitHub: [Realjustawall](https://github.com/Realjustawall)
-
-## Version
-
-Current release: **v1.3.0**
+Maintained by **[Realjustawall](https://github.com/Realjustawall)**.

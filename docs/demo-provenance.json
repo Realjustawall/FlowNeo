@@ -1,0 +1,17 @@
+{
+  "source_commit": "790da83928767eadde6a1e76c3143bf5dc3600d6",
+  "captures": [
+    {
+      "path": "docs/assets/screenshots/en/control-panel-ui-harness.webp",
+      "language": "en",
+      "capture_method": "Original UI with Chrome API test adapter; helper state is simulated, no Google Flow integration tested",
+      "source_png_sha256": "ac6d56f587707136794dea21d40a5552436d0a536703f62101ffbc7caab8b7c6"
+    },
+    {
+      "path": "docs/assets/screenshots/fa/guide.webp",
+      "language": "fa",
+      "capture_method": "Original static guide; this is documentation, not a Persian control panel",
+      "source_png_sha256": "446def71251bcd87334ee5cb39fe3280a864e47132237a57127bb6fb0d423f82"
+    }
+  ]
+}
