@@ -7,10 +7,10 @@
 <img alt="Version" src="https://img.shields.io/badge/version-v1.4-7c6dff?style=flat-square" />
 <img alt="Platform" src="https://img.shields.io/badge/platform-Chrome%20111%2B-354158?style=flat-square" />
 
-<a href="https://github.com/Realjustawall/FlowNeo/releases/latest"><img src="https://img.shields.io/badge/Download-7c6dff?style=flat-square&labelColor=161b22" alt="Download" /></a>
-<a href="docs/gallery.en.md"><img src="https://img.shields.io/badge/Demo%20gallery-5968c3?style=flat-square&labelColor=161b22" alt="Demo gallery" /></a>
-<a href="#quick-start"><img src="https://img.shields.io/badge/Quick%20start-354158?style=flat-square&labelColor=161b22" alt="Quick start" /></a>
-<a href="https://github.com/Realjustawall/FlowNeo/issues"><img src="https://img.shields.io/badge/Report%20an%20issue-354158?style=flat-square&labelColor=161b22" alt="Report an issue" /></a>
+<a href="https://github.com/Realjustawall/FlowNeo/releases/latest"><img src="docs/assets/buttons/download-en.svg" alt="Download" width="220" height="72" /></a>
+<a href="docs/gallery.en.md"><img src="docs/assets/buttons/demo-en.svg" alt="Explore demo" width="220" height="72" /></a>
+<a href="#quick-start"><img src="docs/assets/buttons/start-en.svg" alt="Quick start" width="220" height="72" /></a>
+<a href="https://github.com/Realjustawall/FlowNeo/issues"><img src="docs/assets/buttons/issues-en.svg" alt="Feedback" width="220" height="72" /></a>
 
 [English](README.md) · [فارسی](README.fa.md)
 
